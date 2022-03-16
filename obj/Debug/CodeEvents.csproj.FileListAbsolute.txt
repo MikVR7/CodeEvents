@@ -1,0 +1,6 @@
+C:\Projects\CodeEvents\obj\Debug\CodeEvents.csproj.CoreCompileInputs.cache
+C:\Projects\CodeEvents\bin\Debug\codeevents.dll
+C:\Projects\CodeEvents\bin\Debug\codeevents.pdb
+C:\Projects\CodeEvents\obj\Debug\codeevents.dll
+C:\Projects\CodeEvents\obj\Debug\codeevents.pdb
+C:\Projects\CodeEvents\obj\Debug\CodeEvents.csproj.AssemblyReference.cache
