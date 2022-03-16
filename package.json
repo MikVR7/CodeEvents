@@ -1,0 +1,14 @@
+{
+	"name": "com.tokele.codeevents",
+	"version": "1.0.0",
+	"displayName": "CodeEvents",
+	"description": "CodeEvents",
+	"unity": "",
+	"unityRelease": "",
+	"keywords": [],
+	"author": {
+		"name": "Mihael Vurusic",
+		"email": "m.vurusic.graz@gmail.com",
+		"url": ""
+	}
+}

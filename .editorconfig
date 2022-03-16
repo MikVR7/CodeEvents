@@ -1,0 +1,37 @@
+﻿[*.cs]
+
+# AV1008: Class should not be static
+dotnet_diagnostic.AV1008.severity = none
+
+# AV1500: Member or local function contains too many statements
+dotnet_diagnostic.AV1500.severity = none
+
+# AV1507: File contains multiple types
+dotnet_diagnostic.AV1507.severity = none
+
+# AV1532: Loop statement contains nested loop
+dotnet_diagnostic.AV1532.severity = none
+
+# AV1555: Avoid using non-(nullable-)boolean named arguments
+dotnet_diagnostic.AV1555.severity = none
+
+# AV1561: Signature contains too many parameters
+dotnet_diagnostic.AV1561.severity = none
+
+# AV1564: Parameter in public or internal member is of type bool or bool?
+dotnet_diagnostic.AV1564.severity = none
+
+# AV2318: Work-tracking TODO comment should be removed
+dotnet_diagnostic.AV2318.severity = none
+
+# AV2407: Region should be removed
+dotnet_diagnostic.AV2407.severity = none
+
+# AV1706: Identifier contains an abbreviation or is too short
+dotnet_diagnostic.AV1706.severity = suggestion
+
+# AV1708: Type name contains term that should be avoided
+dotnet_diagnostic.AV1708.severity = suggestion
+
+# AV1710: Member name includes the name of its containing type
+dotnet_diagnostic.AV1710.severity = suggestion

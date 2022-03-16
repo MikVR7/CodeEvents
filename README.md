@@ -1,2 +1,1 @@
-# CodeEvents
-EventSystem for C# projects
+# codeevents
