@@ -3,16 +3,11 @@
 	"version": "1.0.0",
 	"displayName": "CodeEvents",
 	"description": "CodeEvents",
-	"unity": "2020.3",
-	"unityRelease": "30f1",
+	"unity": "",
+	"unityRelease": "",
 	"keywords": [],
-	"repository": {
-		"url": "https://github.com/MikVR7/CodeEvents.git",
-		"type": "git"
-	}
 	"author": {
 		"name": "Mihael Vurusic",
-		"email": "m.vurusic.graz@gmail.com",
-		"url": ""
+		"email": "m.vurusic.graz@gmail.com"
 	}
 }
