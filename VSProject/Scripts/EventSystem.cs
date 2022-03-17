@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CoDeEvents
+namespace CodeEvents
 {
 
     public class AbstractEventSystem

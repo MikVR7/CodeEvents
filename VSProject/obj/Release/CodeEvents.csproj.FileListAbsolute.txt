@@ -4,3 +4,9 @@ C:\Projects\CodeEvents\obj\Release\CodeEvents.csproj.AssemblyReference.cache
 C:\Projects\CodeEvents\obj\Release\CodeEvents.csproj.CoreCompileInputs.cache
 C:\Projects\CodeEvents\obj\Release\codeevents.dll
 C:\Projects\CodeEvents\obj\Release\codeevents.pdb
+C:\Projects\CodeEvents\VSProject\bin\Release\codeevents.dll
+C:\Projects\CodeEvents\VSProject\bin\Release\codeevents.pdb
+C:\Projects\CodeEvents\VSProject\obj\Release\CodeEvents.csproj.AssemblyReference.cache
+C:\Projects\CodeEvents\VSProject\obj\Release\CodeEvents.csproj.CoreCompileInputs.cache
+C:\Projects\CodeEvents\VSProject\obj\Release\codeevents.dll
+C:\Projects\CodeEvents\VSProject\obj\Release\codeevents.pdb
