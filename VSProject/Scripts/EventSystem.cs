@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace CodeEvents
 {
     /// <summary>
-    /// Event System that mimics the UnityEvent system but its faster and adds some features.
+    /// Event system that mimics the UnityEvent system but its faster and adds some features.
     /// ... and whats best: It can be easily extended!
     /// </summary>
     public class AbstractEventSystem { }
