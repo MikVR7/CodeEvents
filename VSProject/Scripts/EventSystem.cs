@@ -16,13 +16,15 @@ namespace CodeEvents
     public class EventSystem : AbstractEventSystem
     {
         private List<Action> actions = new List<Action>();
+        private List<Action> actionsPendingAdd = new List<Action>();
         /// <summary>
         /// Add function to functions list - old method.
         /// </summary>
         /// <param name="action"></param>
         public void AddListener(Action action)
         {
-            actions.Add(action);
+            //actions.Add(action);
+            this.actionsPendingAdd.Add(action);
         }
 
         // TODO: test if that works on scene change too!
@@ -33,7 +35,7 @@ namespace CodeEvents
         /// <param name="action"></param>
         public void AddListenerSingle(Action action)
         {
-            if (!actions.Contains(action)) { actions.Add(action); }
+            if (!actions.Contains(action) && !actionsPendingAdd.Contains(action)) { actionsPendingAdd.Add(action); }
         }
 
         public void RemoveListener(Action action)
@@ -42,11 +44,16 @@ namespace CodeEvents
             {
                 actions.Remove(action);
             }
+            if (actionsPendingAdd.Contains(action))
+            {
+                actionsPendingAdd.Remove(action);
+            }
         }
 
         public void RemoveAllListeners()
         {
             actions.Clear();
+            actionsPendingAdd.Clear();
         }
 
         /// <summary>
@@ -55,6 +62,7 @@ namespace CodeEvents
         /// </summary>
         public void Invoke()
         {
+            this.CombinePendingToActions();
             actions.ForEach(i => i.Invoke());
         }
 
@@ -64,20 +72,27 @@ namespace CodeEvents
         /// </summary>
         public void InvokeSafe()
         {
+            CombinePendingToActions();
             foreach (Action a in actions.ToArray())
             {
                 a.Invoke();
             }
         }
 
+        private void CombinePendingToActions()
+        {
+            this.actionsPendingAdd.ForEach(i => this.actions.Add(i));
+            this.actionsPendingAdd.Clear();
+        }
+
         public bool HasListeners()
         {
-            return this.actions.Count > 0;
+            return (this.actions.Count > 0) || (this.actionsPendingAdd.Count > 0);
         }
 
         public int GetCountListeners()
         {
-            return this.actions.Count;
+            return this.actions.Count + this.actionsPendingAdd.Count;
         }
     }
 
