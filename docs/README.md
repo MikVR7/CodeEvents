@@ -24,3 +24,4 @@ Subscribe to events:
 MyEvents.OnSomethingHappened.AddListener(MyHandler);
 MyEvents.OnDataChanged.AddListener(MyDataHandler);
 ```
+
