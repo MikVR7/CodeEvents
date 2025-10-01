@@ -1,27 +1,42 @@
 # CodeEvents Documentation
 
-This is a lightweight, fast event system designed for decoupled communication between components. It is inspired by the UnityEvent system but is standalone and dependency-free.
+## Overview
+
+CodeEvents is a simple, lightweight, and thread-safe event system for C#. It allows for decoupled communication between different parts of an application.
+
+## Features
+
+- **EventSystem**: Synchronous event handling.
+- **EventSystemAsync**: Asynchronous event handling.
+- Support for events with zero to five parameters.
+- Easy to integrate and use.
 
 ## Usage
 
-Define static events in a central hub:
+### Defining an Event
+
 ```csharp
 public static class MyEvents
 {
-    public static readonly EventSystem OnSomethingHappened = new();
-    public static readonly EventSystem<int> OnDataChanged = new();
+    public static readonly EventSystem<string> OnSomethingHappened = new();
 }
 ```
 
-Publish events:
+### Subscribing to an Event
+
 ```csharp
-MyEvents.OnSomethingHappened.Invoke();
-MyEvents.OnDataChanged.Invoke(42);
+MyEvents.OnSomethingHappened.AddListener(HandleSomethingHappened);
+
+private void HandleSomethingHappened(string message)
+{
+    Console.WriteLine($"Event received: {message}");
+}
 ```
 
-Subscribe to events:
+### Publishing an Event
+
 ```csharp
-MyEvents.OnSomethingHappened.AddListener(MyHandler);
-MyEvents.OnDataChanged.AddListener(MyDataHandler);
+MyEvents.OnSomethingHappened.Invoke("Hello, World!");
 ```
+
 

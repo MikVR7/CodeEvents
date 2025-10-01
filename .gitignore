@@ -1,0 +1,7 @@
+# Visual Studio / .NET
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+TestResults/
