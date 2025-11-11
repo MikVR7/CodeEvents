@@ -54,27 +54,13 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         public void Invoke()
         {
-            foreach (var t in this._actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke();
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        public void InvokeByArray()
-        {
-            Action[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke();
+                _actions[i].Invoke();
             }
         }
 
@@ -131,29 +117,14 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         /// <param name="param0"></param>
         public void Invoke(T0 param0)
         {
-            foreach (var t in _actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke(param0);
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        /// <param name="param0"></param>
-        public void InvokeByArray(T0 param0)
-        {
-            Action<T0>[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke(param0);
+                _actions[i].Invoke(param0);
             }
         }
 
@@ -210,31 +181,15 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         /// <param name="param0"></param>
         /// <param name="param1"></param>
         public void Invoke(T0 param0, T1 param1)
         {
-            foreach (var t in _actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke(param0, param1);
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        /// <param name="param0"></param>
-        /// <param name="param1"></param>
-        public void InvokeByArray(T0 param0, T1 param1)
-        {
-            Action<T0, T1>[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke(param0, param1);
+                _actions[i].Invoke(param0, param1);
             }
         }
 
@@ -291,33 +246,16 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         /// <param name="param0"></param>
         /// <param name="param1"></param>
         /// <param name="param2"></param>
         public void Invoke(T0 param0, T1 param1, T2 param2)
         {
-            foreach (var t in _actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke(param0, param1, param2);
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        /// <param name="param0"></param>
-        /// <param name="param1"></param>
-        /// <param name="param2"></param>
-        public void InvokeByArray(T0 param0, T1 param1, T2 param2)
-        {
-            Action<T0, T1, T2>[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke(param0, param1, param2);
+                _actions[i].Invoke(param0, param1, param2);
             }
         }
 
@@ -375,8 +313,7 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         /// <param name="param0"></param>
         /// <param name="param1"></param>
@@ -384,26 +321,9 @@ namespace CodeEvents
         /// <param name="param3"></param>
         public void Invoke(T0 param0, T1 param1, T2 param2, T3 param3)
         {
-            foreach (var t in _actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke(param0, param1, param2, param3);
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        /// <param name="param0"></param>
-        /// <param name="param1"></param>
-        /// <param name="param2"></param>
-        /// <param name="param3"></param>
-        public void InvokeByArray(T0 param0, T1 param1, T2 param2, T3 param3)
-        {
-            Action<T0, T1, T2, T3>[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke(param0, param1, param2, param3);
+                _actions[i].Invoke(param0, param1, param2, param3);
             }
         }
 
@@ -462,8 +382,7 @@ namespace CodeEvents
         }
 
         /// <summary>
-        /// Invoke event inside list - faster than InvokeSafe, but might run into 
-        /// exception if the list gets changed while iterating.
+        /// Invoke event - iterates backwards to safely handle listener modifications during invocation.
         /// </summary>
         /// <param name="param0"></param>
         /// <param name="param1"></param>
@@ -472,27 +391,9 @@ namespace CodeEvents
         /// <param name="param4"></param>
         public void Invoke(T0 param0, T1 param1, T2 param2, T3 param3, T4 param4)
         {
-            foreach (var t in _actions)
+            for (int i = _actions.Count - 1; i >= 0; i--)
             {
-                t.Invoke(param0, param1, param2, param3, param4);
-            }
-        }
-
-        /// <summary>
-        /// Invoke event inside array - slower but safer. List gets transformed to Array
-        /// and then the array gets iterated.
-        /// </summary>
-        /// <param name="param0"></param>
-        /// <param name="param1"></param>
-        /// <param name="param2"></param>
-        /// <param name="param3"></param>
-        /// <param name="param4"></param>
-        public void InvokeByArray(T0 param0, T1 param1, T2 param2, T3 param3, T4 param4)
-        {
-            Action<T0, T1, T2, T3, T4>[] a = _actions.ToArray();
-            foreach (var t in a)
-            {
-                t.Invoke(param0, param1, param2, param3, param4);
+                _actions[i].Invoke(param0, param1, param2, param3, param4);
             }
         }
 
